@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+
 
 /**
  * @brief Вычисляет давление, производимое плитой на опору
@@ -37,6 +39,10 @@ double p(const double m, const double s)
 double getDouble()
 {
     double value = 0.0;
-    scanf("%lf", &value);
+    if (scanf("%lf", &value) != 1)
+    {
+        printf("Error: input is not a number.\n");
+        exit(1);
+    }
     return value;
 }
